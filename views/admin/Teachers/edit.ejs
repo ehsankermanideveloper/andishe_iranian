@@ -1,0 +1,136 @@
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="padding-right: 0px;padding-left: 0px;">
+    <div class="card">
+        <h5 class="card-header">ویرایش اطلاعات دبیر </h5>
+
+        <div class="card-body">
+            <%- include('../../layouts/validationError' , {Errors : ClientError}) %>
+                <% if(teacher.profile){%>
+                    <%teacher.profile = teacher.profile.slice(8)%>
+
+                        <img src="<%=teacher.profile%>" class="img-fluid" alt="<%=teacher.firstName%>">
+                        <%}else{%>
+                            <p>تصویر دبیر را انتخاب نکرده اید</p>
+                            <%}%>
+                                <form id="validationform" data-parsley-validate=""
+                                    action="/admin/teachers/<%= teacher.id %>/edit?_method=PUT" novalidate=""
+                                    method="POST" enctype="multipart/form-data">
+                                    <div class="form-group row">
+                                        <div class="col">
+                                            <label for="title" class="control-label font-weight-bold">نام دبیر</label>
+                                            <input type="text" class="form-control" name="firstName" id="title"
+                                                placeholder="نام را وارد کنید" value="<%= teacher.firstName %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col">
+                                            <label for="title" class="control-label font-weight-bold">نام خانوادگی
+                                                دبیر</label>
+                                            <input type="text" class="form-control" name="lastName" id="title"
+                                                placeholder="نام را وارد کنید" value="<%= teacher.lastName %>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col">
+                                            <label for="body" class="control-label font-weight-bold">معرفی دبیر</label>
+                                            <textarea rows="5" class="form-control" name="discreption" id="body"
+                                                placeholder="متن را وارد کنید"><%- teacher.discreption %></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col">
+                                            <label for="images" class="control-label font-weight-bold">تصویر
+                                                دبیر</label>
+                                            <input type="file" class="form-control" name="profile" id="images">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col">
+                                            <label for="images" class="control-label font-weight-bold">دبیره درس :
+                                            </label>
+                                            <input type="text" class="form-control" name="teacherFor" id="images"
+                                                value="<%= teacher.teacherFor %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col">
+                                            <label for="category"
+                                                class="control-label font-weight-bold font-weight-bold">برای وب سایت
+                                                زبان
+                                            </label>
+                                            <select name="language" id="category" class="form-control">
+                                                <% languages.forEach((language)=>{%>
+                                                    <% if(`${language._id}`==`${teacher.language}`){%>
+                                                        <option value="<%= language._id %>" selected>
+                                                            <%= language.title %>
+                                                        </option>
+                                                        <%}else{%>
+                                                            <option value="<%= language._id %>">
+                                                                <%= language.title %>
+                                                            </option>
+                                                            <%}%>
+
+                                                                <%})%>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col">
+                                            <label for="tags" class="control-label font-weight-bold">سال تجربه</label>
+                                            <input type="number" class="form-control" name="experience" id="tags"
+                                                placeholder="تجربه" value="<%= teacher.experience %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col">
+                                            <label for="body" class="control-label font-weight-bold">توضیحات ویژگی های
+                                                دبیر</label>
+                                            <textarea rows="5" class="form-control" name="skillDiscriptions" id="body"
+                                                placeholder="متن را وارد کنید"><%- teacher.skillDiscriptions %></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col">
+                                            <label for="tags" class="control-label font-weight-bold">مهارت تدریس</label>
+                                            <input type="text" class="form-control" name="teachingSkills" id="tags"
+                                                placeholder="" required value="<%= teacher.teachingSkills %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col">
+                                            <label for="tags" class="control-label font-weight-bold">مهارت
+                                                گفتاری</label>
+                                            <input type="text" class="form-control" name="spokenSkills" id="tags"
+                                                placeholder="" required value="<%= teacher.spokenSkills %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col">
+                                            <label for="tags" class="control-label font-weight-bold">مهارت
+                                                ارتباطی</label>
+                                            <input type="text" class="form-control" name="communicationSkills" id="tags"
+                                                placeholder="" required value="<%= teacher.communicationSkills %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col">
+                                            <label for="tags" class="control-label font-weight-bold">مهارت
+                                                اجتماعی</label>
+                                            <input type="text" class="form-control" name="socialSkills" id="tags"
+                                                placeholder="" required value="<%= teacher.socialSkills %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row text-right">
+                                        <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                                            <button type="submit" class="btn btn-space btn-primary">ارسال</button>
+                                        </div>
+                                    </div>
+                                </form>
+        </div>
+    </div>
+</div>
+<!-- <script src="//cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('body');
+</script> -->

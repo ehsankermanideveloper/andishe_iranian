@@ -1,0 +1,57 @@
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="padding-right: 0px;padding-left: 0px;">
+    <div class="card">
+        <h5 class="card-header">ایجاد کاربران </h5>
+
+        <div class="card-body">
+            <%- include('../../layouts/validationError' , {Errors : ClientError}) %>
+
+                <form id="validationform" data-parsley-validate="" novalidate="" method="POST"
+                    action="/admin/usersmanagment/register/add">
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="title" class="control-label font-weight-bold">نام کاربری</label>
+                            <input type="text" class="form-control" name="username" id="title">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="role" class="control-label font-weight-bold font-weight-bold">سطح کاربر
+                            </label>
+                            <select name="role" id="role" class="form-control">
+                                <% const roles={'student' : 'دانش آموز' , 'user' : 'کاربر عادی' , 'teacher' : 'معلم'
+                                    , 'userAdmin' : 'ادمین چند منظوره' } %>
+                                    <% Object.keys(roles).forEach((role)=>{ %>
+
+                                        <option value="<%= role %>">
+                                            <%= roles[role] %>
+                                        </option>
+
+                                        <%})%>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="title" class="control-label font-weight-bold">عبور رمز </label>
+                            <input type="text" class="form-control" name="password" id="title">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="title" class="control-label font-weight-bold">کدملی کاربر</label>
+                            <input type="text" class="form-control" name="nationalId" id="title"
+                              >
+                        </div>
+                    </div>
+                    <div class="form-group row text-right">
+                        <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                            <button type="submit" class="btn btn-space btn-primary">ایجاد کن</button>
+                        </div>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>

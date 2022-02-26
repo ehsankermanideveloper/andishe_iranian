@@ -1,0 +1,114 @@
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="padding-right: 0px;padding-left: 0px;">
+    <div class="card">
+        <h5 class="card-header">ویرایش اطلاعات وب سایت</h5>
+        <div class="card-body">
+            <%- include('../../layouts/validationError' , {Errors : ClientError}) %>
+                <form action="/admin/school/edit?_method=PUT" method="POST">
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="number" class="control-label font-weight-bold">تعداد زبان آموزان</label>
+                            <input type="text" class="form-control" name="studentNumber" id="number"
+                                   placeholder="تعداد را وارد کنید" value="<%= school.studentNumber %>">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="number" class="control-label font-weight-bold">تعداد کلاس</label>
+                            <input type="text" class="form-control" name="classRoomNumber" id="number"
+                                placeholder="تعداد را وارد کنید" value="<%= school.classRoomNumber %>">
+                        </div>
+                    </div>
+                    <div class="from-gorup row">
+                        <div class="col">
+                            <label for="number" class="control-label font-weight-bold">تعداد سرویس ها</label>
+                            <input type="text" class="form-control" name="busNumber" id="number"
+                                placeholder="تعداد را وارد کنید" value="<%= school.busNumber %>">
+                        </div>
+                    </div>
+                    <div class="from-group row">
+                        <div class="col">
+                            <label for="number" class="control-label font-weight-bold">تعداد دبیران</label>
+                            <input type="text" class="form-control" name="teachersNumber" id="number"
+                                placeholder="تعداد را وارد کنید" value="<%= school.teachersNumber %>">
+                        </div>
+                    </div>
+                    <div class="from-group row">
+                        <div class="col">
+                            <label for="number" class="control-label font-weight-bold">عنوان صفحه ی اول به زبان فارسی</label>
+                            <input type="text" class="form-control" name="teachersNumber" id="number"
+                                   placeholder="تعداد را وارد کنید" value="<%= school.homePageTitleFa %>">
+                        </div>
+                    </div>
+                    <div class="from-group row">
+                        <div class="col">
+                            <label for="number" class="control-label font-weight-bold">عنوان صفحه ی اول به زبان انگلیسی</label>
+                            <input type="text" class="form-control" name="teachersNumber" id="number"
+                                   placeholder="تعداد را وارد کنید" value="<%= school.homePageTitleEn %>">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="body" class="control-label font-weight-bold">توضیحات کوتاه برای عنوان صفحه ی اصلی به زبان فارسی</label>
+                            <textarea rows="5" class="form-control" name="homePageDisFa" id="body"
+                                      placeholder="متن را وارد کنید"><%- school.homePageDisFa %></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="body" class="control-label font-weight-bold">توضیحات کوتاه برای عنوان صفحه ی اصلی به زبان انگلیسی</label>
+                            <textarea rows="5" class="form-control" name="homePageDisEn" id="body"
+                                      placeholder="متن را وارد کنید"><%- school.homePageDisEn %></textarea>
+                        </div>
+                    </div>
+                    <div class="from-group row">
+                        <div class="col">
+                            <label for="number" class="control-label font-weight-bold">شماره مدرسه</label>
+                            <input type="text" class="form-control" name="schoolPhone" id="number"
+                                placeholder="شماره را وارد کنید" value="<%= school.schoolPhone %>">
+                        </div>
+                    </div>
+                    <div class="from-group row">
+                        <div class="col">
+                            <label for="number" class="control-label font-weight-bold">ایمیل مدرسه را وارد کنید</label>
+                            <input type="text" class="form-control" name="email" id="number"
+                                placeholder="ایمیل را وارد کنید" value="<%= school.email %>">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="body" class="control-label font-weight-bold">
+                            آدرس مدرسه به فارسی</label>
+                            <textarea rows="5" class="form-control" name="mapFa" id="body"
+                                placeholder="متن را وارد کنید"><%- school.mapFa %></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="body" class="control-label font-weight-bold">آدرس مدرسه به انگلیسی</label>
+                            <textarea rows="5" class="form-control" name="mapEn" id="body"
+                                placeholder="متن را وارد کنید"><%- school.mapEn %></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="body" class="control-label font-weight-bold">توضیحات کوتاه در باره مدرسه به فارسی</label>
+                            <textarea rows="5" class="form-control" name="infoFa" id="body"
+                                placeholder="متن را وارد کنید"><%- school.infoFa %></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="body" class="control-label font-weight-bold">توضیحات کوتاه مدرسه به زبان انگلیسی</label>
+                            <textarea rows="5" class="form-control" name="infoEn" id="body"
+                                placeholder="متن را وارد کنید"><%- school.infoEn %></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row text-right">
+                        <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                            <button type="submit" class="btn btn-space btn-primary">ویرایش</button>
+                        </div>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>

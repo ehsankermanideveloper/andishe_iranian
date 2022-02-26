@@ -1,0 +1,95 @@
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="padding-right: 0px;padding-left: 0px;">
+    <div class="card">
+        <h5 class="card-header">ایجاد دوره جدید</h5>
+
+        <div class="card-body">
+            <%- include('../../layouts/validationError' , {Errors : ClientError}) %>
+                <form id="validationform" data-parsley-validate="" novalidate="" method="POST"
+                    action="/admin/articles/create" enctype="multipart/form-data">
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="title" class="control-label font-weight-bold">عنوان دوره</label>
+                            <input type="text" class="form-control" name="title" id="title"
+                                placeholder="عنوان را وارد کنید">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="body" class="control-label font-weight-bold">متن</label>
+                            <textarea rows="5" class="form-control" name="body" id="body"
+                                placeholder="متن دوره را وارد کنید"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="images" class="control-label font-weight-bold">تصویر
+                                دوره</label>
+                            <input type="text" class="form-control" name="file" id="images">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="images" class="control-label font-weight-bold">نام فولدر دوره
+                                </label>
+                            <input type="text" class="form-control" name="folderName" id="images">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="category" class="control-label font-weight-bold font-weight-bold">دسته
+                                بندی</label>
+                            <select name="category" id="category" class="form-control">
+                                <% category.forEach((cate)=>{%>
+                                    <option value="<%= cate._id %>">
+                                        <%= cate.title %>
+                                    </option>
+                                    <%})%>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="tags" class="control-label font-weight-bold">دانش آموزان</label>
+                            <input type="number" class="form-control" name="maxStudent" id="tags"
+                                placeholder="حداکثر تعداد دانش آموزان">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="tags" class="control-label font-weight-bold">قیمت</label>
+                            <input type="text" class="form-control" name="price" id="tags" placeholder="قیمت" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="category" class="control-label font-weight-bold font-weight-bold">نوع
+                                دوره</label>
+                            <select name="type" id="category" class="form-control">
+                                <option value="cash">نقدی</option>
+                                <option value="free">رایگان</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="tags" class="control-label font-weight-bold">تگ ها</label>
+                            <input type="text" class="form-control" name="tags" id="tags"
+                                placeholder="تگ ها را وارد کنید" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row text-right">
+                        <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                            <button type="submit" class="btn btn-space btn-primary">ارسال</button>
+                        </div>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>
+<script src="//cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('body');
+</script>

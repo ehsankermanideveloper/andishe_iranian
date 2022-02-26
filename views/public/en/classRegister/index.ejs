@@ -1,0 +1,145 @@
+﻿<div class="page-banner-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-banner-content">
+                    <h2>Enroll</h2>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>Enroll</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="quote-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="quote-image"></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="quote-item">
+                    <div class="content">
+                        <span>Get a Quote</span>
+                        <h3>Online Class Registration</h3>
+                    </div>
+                    <form action="/en/classRegister" method="post">
+                        <%- include('../../../layouts/validationError' , {Errors : ClientError}) %>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username"
+                                placeholder="First and last name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="age" placeholder="Student age">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="nationalId" placeholder="National Id">
+                        </div>
+                        <div class="form-group row">
+                            <div class="col">
+                                <label for="category" class="control-label font-weight-bold font-weight-bold">For class:
+                                </label>
+                                <select name="classe" id="category" class="form-control">
+                                    <% classes.forEach((classe)=>{%>
+                                        <option value="<%= classe._id %>">
+                                            <%= classe.title %>
+                                        </option>
+                                    <%})%>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="fatherName" placeholder="Father's name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="fatherPhoneNumber"
+                                placeholder="Father's phone number">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="matherPhoneNumber"
+                                placeholder="Mother's phone number">
+                        </div>
+                            <button type="submit" class="default-btn">
+                                Submit Now
+                            </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="enrollment-area pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="enrollment-accordion">
+                    <div class="content">
+                        <h3>Steps to Enrollment</h3>
+                    </div>
+                    <ul class="accordion">
+                        <li class="accordion-item">
+                            <a class="accordion-title active" href="javascript:void(0)">
+                                <i class='bx bx-plus'></i>
+                                Explore Your Option
+                            </a>
+                            <p class="accordion-content show">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </li>
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class='bx bx-plus'></i>
+                                Submit Application in Online
+                            </a>
+                            <p class="accordion-content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </li>
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class='bx bx-plus'></i>
+                                Receive Assign Task
+                            </a>
+                            <p class="accordion-content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </li>
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class='bx bx-plus'></i>
+                                Register at Your Assign Class
+                            </a>
+                            <p class="accordion-content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </li>
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class='bx bx-plus'></i>
+                                Go Online Live Class
+                            </a>
+                            <p class="accordion-content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="enrollment-image"></div>
+            </div>
+        </div>
+    </div>
+</section>

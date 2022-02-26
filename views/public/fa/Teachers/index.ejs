@@ -1,0 +1,46 @@
+﻿<div class="page-banner-area item-bg1">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-banner-content">
+                    <h2>معلم</h2>
+                    <ul>
+                        <li>
+                            <a href="/">خانه</a>
+                        </li>
+                        <li>معلم</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="teacher-area pt-100 pb-70">
+    <div class="container-fluid">
+        <div class="row">
+            <% teachers.forEach((teacher)=>{%>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-teacher">
+                        <div class="image">
+                            <% teacher.profile=teacher.profile.slice(8) %>
+                                <a
+                                    href="/fa/teachers/<%= teacher.firstName %>/<%=teacher.lastName %>/<%= teacher.teacherFor %>/detail">
+                                    <img src="<%= teacher.profile %>" alt="image">
+                                </a>
+                        </div>
+                        <div class="content">
+                            <a href="/fa/teachers/<%=teacher.firstName %>/<%=teacher.lastName %>/<%=
+                                        teacher.teacherFor %>/detail">
+                                <h3>
+                                    <%= teacher.firstName + " " + teacher.lastName %>
+                                </h3>
+                            </a>
+                            <span> دبیر <%= teacher.teacherFor %></span>
+                        </div>
+                    </div>
+                </div>
+                <%})%>
+        </div>
+    </div>
+</section>

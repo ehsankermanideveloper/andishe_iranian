@@ -1,0 +1,9 @@
+<% if(Errors.length !=0){%>
+    <ul>
+        <% Errors.forEach((err)=>{%>
+            <li>
+                <%= err %>
+            </li>
+            <%})%>
+    </ul>
+    <%}%>

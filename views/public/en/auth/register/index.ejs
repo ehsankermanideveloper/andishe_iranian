@@ -1,0 +1,56 @@
+﻿
+<div class="page-banner-area item-bg4">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-banner-content">
+                    <h2>Register</h2>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>Register</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="register-area ptb-50">
+    <div class="container">
+        <div class="register-form">
+            <h2>Register</h2>
+            <%- include('../../../../layouts/validationError' , {Errors : ClientError}) %>
+            <form action="/en/auth/register" method="post">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" placeholder="username" name="username">
+                </div>
+                <div class="form-group">
+                    <label>National</label>
+                    <input type="text" class="form-control" placeholder="nationalId" name="nationalId">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" placeholder="Email" name="email">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="text" class="form-control" placeholder="Password" name="password">
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="checkme">
+                            <label class="form-check-label" for="checkme">Show password?</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">Register now</button>
+            </form>
+            <div class="important-text">
+                <p>Already have an account? <a href="/en/auth/login">Login now!</a></p>
+            </div>
+        </div>
+    </div>
+</section>

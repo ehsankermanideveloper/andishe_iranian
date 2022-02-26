@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="HTML5,CSS3,HTML,Template,multi-page,Ketan - Kindergarten & School HTML Template">
+    <meta name="description" content="Ketan - Kindergarten & School HTML Template">
+    <meta name="author" content="Barat Hadian">
+
+    <link rel="stylesheet" href="/fa/assets/css/bootstrap.rtl.min.css">
+
+    <link rel="stylesheet" href="/fa/assets/css/animate.min.css">
+
+    <link rel="stylesheet" href="/fa/assets/css/meanmenu.css">
+
+    <link rel="stylesheet" href="/fa/assets/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="/fa/assets/css/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="/fa/assets/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="/fa/assets/css/odometer.min.css">
+
+    <link rel="stylesheet" href="/fa/assets/css/magnific-popup.min.css">
+
+    <link rel="stylesheet" href="/fa/assets/css/imagelightbox.min.css">
+
+    <link rel="stylesheet" href="/fa/assets/css/style.css">
+
+    <link rel="stylesheet" href="/fa/assets/css/responsive.css">
+
+    <link rel="stylesheet" href="/fa/assets/css/rtl.css">
+    <title><%- options.title %></title>
+    <link rel="icon" type="image/png" href="/fa/assets/img/favicon.png">
+</head>
+
+<body>
+
+    <div class="preloader">
+        <div class="loader">
+            <div class="wrapper">
+                <div class="circle circle-1"></div>
+                <div class="circle circle-1a"></div>
+                <div class="circle circle-2"></div>
+                <div class="circle circle-3"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="navbar-area">
+        <div class="main-responsive-nav">
+            <div class="container">
+                <div class="main-responsive-menu">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="/fa/assets/img/logo.png" alt="image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-navbar">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="/fa/assets/img/logo.png" alt="image">
+                    </a>
+                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="/fa" class="nav-link active">
+                                    خانه
+                                </a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    پیش ثبت نام
+                                    <i class='bx bx-chevron-down'></i>
+                                </a>
+                                <ul class="dropdown-menu">
+
+                                    <% classes.forEach((classLis)=>{%>
+                                        <li class="nav-item">
+                                            <a href="/fa/classRegister" class="nav-link">
+                                            کلاس    <%= classLis.title %>
+                                            </a>
+                                        </li>
+                                    <%})%>
+
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/fa/blogs" class="nav-link">
+                                    وبلاگ ها
+                                </a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a href="/fa/teachers" class="nav-link">
+                                    معلمان
+                                </a>
+                            </li>
+                            <% if(!user){%>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        حساب کاربری
+                                        <i class='bx bx-chevron-down'></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="/fa/auth/register" class="nav-link">
+                                                ثبت نام
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/fa/auth/login" class="nav-link">
+                                                ورود
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            <%}%>
+                            <li class="nav-item">
+                                <a href="/fa/privacy" class="nav-link">
+                                    حریم خصوصی
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    صفحات
+                                    <i class='bx bx-chevron-down'></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="/fa/about" class="nav-link">
+                                            درباره ی ما
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/fa/conctact" class="nav-link">
+                                            تماس با ما
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/fa/gallery" class="nav-link">
+                                            گالری
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="others-options d-flex align-items-center">
+                            <div class="option-item">
+                                <a href="/en" class="dropdown-item d-flex align-items-center default-btn">
+                                    <span>English</span>
+
+                                    <img src="/fa/assets/img/english.png" class="shadow-sm" alt="flag" width="20px" style="margin-right: 5px">
+                                </a>
+                            </div>
+                            <div class="option-item">
+                                <a href="/fa" class="dropdown-item d-flex align-items-center default-btn">
+                                    <span>فارسی</span>
+
+                                    <img src="/fa/assets/img/iran.png" class="shadow-sm" alt="flag" width="20px" style="margin-right: 5px">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="others-option-for-responsive">
+            <div class="container">
+                <div class="dot-menu">
+                    <div class="inner">
+                        <div class="circle circle-one"></div>
+                        <div class="circle circle-two"></div>
+                        <div class="circle circle-three"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="option-inner">
+                        <div class="others-options d-flex align-items-center">
+                            <div class="option-item">
+                                <a href="/en" class="dropdown-item d-flex align-items-center default-btn">
+                                    <span>English</span>
+
+                                    <img src="/fa/assets/img/english.png" class="shadow-sm" alt="flag" width="20px" style="margin-right: 5px">
+                                </a>
+                            </div>
+                            <div class="option-item">
+                                <a href="/fa" class="dropdown-item d-flex align-items-center default-btn">
+                                    <span>فارسی</span>
+
+                                    <img src="/fa/assets/img/iran.png" class="shadow-sm" alt="flag" width="20px" style="margin-right: 5px">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- body %>
+        <section class="footer-area pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <div class="logo">
+                                <h2 style="font-size: 25px">
+                                    <a href="/fa">اندیشه ی فردای ایرانیان</a>
+                                </h2>
+                            </div>
+                            <p><%= schoolInfo.infoFa.slice(0,300) %>...</p>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h3>تماس بگیرید</h3>
+                            <ul class="footer-contact-info">
+                                <li>
+                                    <i class='bx bxs-phone'></i>
+                                    <span>تلفن</span>
+                                    <a href="tel:<%= schoolInfo.schoolPhone %>"><%= schoolInfo.schoolPhone %></a>
+                                </li>
+                                <li>
+                                    <i class='bx bx-envelope'></i>
+                                    <span>ایمیل</span>
+                                    <a href="mailto: <%= schoolInfo.email %>"><%= schoolInfo.email %></a>
+                                </li>
+                                <li>
+                                    <i class='bx bx-map'></i>
+                                    <span>موقعیت</span>
+                                    <%= schoolInfo.mapFa %>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget pl-5">
+                            <h3>صفحات</h3>
+                            <ul class="quick-links">
+                                <li>
+                                    <a href="/fa/auth/register">ثبت نام</a>
+                                </li>
+                                <li>
+                                    <a href="/fa/auth/login">ورود</a>
+                                </li>
+                                <li>
+                                    <a href="/fa/gallery">گالری</a>
+                                </li>
+                                <li>
+                                    <a href="/fa/about">درباره ی ما</a>
+                                </li>
+                                <li>
+                                    <a href="/fa/contact">تماس با ما</a>
+                                </li>
+                                <li>
+                                    <a href="/fa/blogs">وبلاگ</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h3>گالری تصاویر</h3>
+                            <ul class="photo-gallery-list">
+                                <li>
+                                    <div class="box">
+                                        <img src="/fa/assets/img/footer-gallery/footer-gallery-1.jpg" alt="image">
+                                        <a href="#" target="_blank" class="link-btn"></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <img src="/fa/assets/img/footer-gallery/footer-gallery-2.jpg" alt="image">
+                                        <a href="#" target="_blank" class="link-btn"></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <img src="/fa/assets/img/footer-gallery/footer-gallery-3.jpg" alt="image">
+                                        <a href="#" target="_blank" class="link-btn"></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <img src="/fa/assets/img/footer-gallery/footer-gallery-4.jpg" alt="image">
+                                        <a href="#" target="_blank" class="link-btn"></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <img src="/fa/assets/img/footer-gallery/footer-gallery-5.jpg" alt="image">
+                                        <a href="#" target="_blank" class="link-btn"></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <img src="/fa/assets/img/footer-gallery/footer-gallery-6.jpg" alt="image">
+                                        <a href="#" target="_blank" class="link-btn"></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <img src="/fa/assets/img/footer-gallery/footer-gallery-1.jpg" alt="image">
+                                        <a href="#" target="_blank" class="link-btn"></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <img src="/fa/assets/img/footer-gallery/footer-gallery-2.jpg" alt="image">
+                                        <a href="#" target="_blank" class="link-btn"></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <img src="/fa/assets/img/footer-gallery/footer-gallery-3.jpg" alt="image">
+                                        <a href="#" target="_blank" class="link-btn"></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="copyright-area">
+            <div class="container">
+                <div class="copyright-area-content">
+                    <p>کپی رایت © 1400 کتان. تمام حقوق قالب محفوظ است. طراحی توسط <a
+                            href="https://www.rtl-theme.com/author/barat" target="_blank">Barat Hadian</a></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="go-top">
+            <i class='bx bx-up-arrow-alt'></i>
+        </div>
+        <script src="/fa/assets/js/jquery.min.js"></script>
+
+        <script src="/fa/assets/js/popper.min.js"></script>
+
+        <script src="/fa/assets/js/bootstrap.min.js"></script>
+
+        <script src="/fa/assets/js/jquery.meanmenu.js"></script>
+
+        <script src="/fa/assets/js/owl.carousel.min.js"></script>
+
+        <script src="/fa/assets/js/jquery.magnific-popup.min.js"></script>
+
+        <script src="/fa/assets/js/imagelightbox.min.js"></script>
+
+        <script src="/fa/assets/js/odometer.min.js"></script>
+
+        <script src="/fa/assets/js/jquery.appear.min.js"></script>
+
+        <script src="/fa/assets/js/jquery.ajaxchimp.min.js"></script>
+
+        <script src="/fa/assets/js/form-validator.min.js"></script>
+
+        <script src="/fa/assets/js/contact-form-script.js"></script>
+
+        <script src="/fa/assets/js/main.js"></script>
+</body>
+
+</html>

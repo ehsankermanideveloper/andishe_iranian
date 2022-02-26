@@ -1,0 +1,115 @@
+﻿<div class="page-banner-area item-bg4">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-banner-content">
+                    <h2>Teacher Details</h2>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>Teacher Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="teacher-details-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="teacher-details-desc">
+                    <div class="teacher-desc-image">
+                        <img src="<%= teacher.profile.slice(8) %>" alt="image">
+                    </div>
+                    <div class="teacher-desc-content">
+                        <h3>Personal Information and Biography</h3>
+                        <%= teacher.discreption %>
+                            <h3>Teacher Skills</h3>
+                            <%= teacher.skillDiscriptions %>
+                                <div class="skill-bar" data-percentage="<%=teacher.teachingSkills %>%">
+                                    <p class="progress-title-holder">
+                                        <span class="progress-title">Teaching Skills</span>
+                                        <span class="progress-number-wrapper">
+                                            <span class="progress-number-mark">
+                                                <span class="percent"></span>
+                                                <span class="down-arrow"></span>
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <div class="progress-content-outter">
+                                        <div class="progress-content"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar" data-percentage="<%=teacher.spokenSkills %>%">
+                                    <p class="progress-title-holder">
+                                        <span class="progress-title">Speaking</span>
+                                        <span class="progress-number-wrapper">
+                                            <span class="progress-number-mark">
+                                                <span class="percent"></span>
+                                                <span class="down-arrow"></span>
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <div class="progress-content-outter">
+                                        <div class="progress-content two"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar" data-percentage="<%=teacher.communicationSkills %>%">
+                                    <p class="progress-title-holder">
+                                        <span class="progress-title">Communication Skill</span>
+                                        <span class="progress-number-wrapper">
+                                            <span class="progress-number-mark">
+                                                <span class="percent"></span>
+                                                <span class="down-arrow"></span>
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <div class="progress-content-outter">
+                                        <div class="progress-content three"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar" data-percentage="<%= teacher.socialSkills %>%">
+                                    <p class="progress-title-holder">
+                                        <span class="progress-title">Follow The Rules</span>
+                                        <span class="progress-number-wrapper">
+                                            <span class="progress-number-mark">
+                                                <span class="percent"></span>
+                                                <span class="down-arrow"></span>
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <div class="progress-content-outter">
+                                        <div class="progress-content four"></div>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="teacher-details-information">
+                    <h3>Profile Details</h3>
+                    <ul>
+                        <li>
+                            <span>Name:</span>
+                            <%= teacher.firstName + " " + teacher.lastName %>
+                        </li>
+
+                        <li>
+                            <span>Designation:</span>
+                            <%= teacher.teacherFor %> Teacher
+                        </li>
+                        <li>
+                            <span>Experience:</span>
+                            <%= teacher.experience %> Years
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

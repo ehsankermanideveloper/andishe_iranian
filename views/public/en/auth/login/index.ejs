@@ -1,0 +1,50 @@
+﻿<div class="page-banner-area item-bg3">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-banner-content">
+                    <h2>Login</h2>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>Login</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="login-area ptb-100">
+    <div class="container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <%- include('../../../../layouts/validationError' , {Errors : ClientError}) %>
+                <form action="/en/auth/login" method="post">
+                    <div class="form-group">
+                        <label>National</label>
+                        <input type="text" class="form-control" placeholder="nationalId" name="nationalId">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="text" class="form-control" placeholder="Password" name="password">
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="checkme">
+                                <label class="form-check-label" for="checkme">Remember me</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 lost-your-password">
+                            <a href="#" class="lost-your-password">Forgot your password?</a>
+                        </div>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <div class="important-text">
+                    <p>Don't have an account? <a href="register.html">Register now!</a></p>
+                </div>
+        </div>
+    </div>
+</section>

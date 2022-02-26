@@ -1,0 +1,146 @@
+<div class="page-banner-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-banner-content">
+                    <h2>نام نویسی</h2>
+                    <ul>
+                        <li>
+                            <a href="/">خانه</a>
+                        </li>
+                        <li>نام نویسی</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="quote-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="quote-image"></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="quote-item">
+
+                    <div class="content">
+                        <span>دریافت قیمت</span>
+                        <h3>ثبت نام کلاس آنلاین</h3>
+                    </div>
+                    <%- include('../../../layouts/validationError' , {Errors : ClientError}) %>
+                        <form action="/fa/classRegister" method="post">
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="username"
+                                    placeholder="نام و نام خانوادگی">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="age" placeholder="سن دانش آموز">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="nationalId" placeholder="کد ملی">
+                            </div>
+                            <div class="form-group row">
+                                <div class="col">
+                                    <label for="category" class="control-label font-weight-bold font-weight-bold">برای کلاس :
+                                    </label>
+                                    <select name="classe" id="category" class="form-control">
+                                        <% classes.forEach((classe)=>{%>
+                                            <option value="<%= classe._id %>">
+                                                <%= classe.title %>
+                                            </option>
+                                        <%})%>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="fatherName" placeholder="نام پدر">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="fatherPhoneNumber"
+                                    placeholder="شماره تلفن پدر">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="matherPhoneNumber"
+                                    placeholder="شماره تلفن مادر">
+                            </div>
+                            <button type="submit" class="default-btn">
+                                ارسال
+                            </button>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="enrollment-area pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="enrollment-accordion">
+                    <div class="content">
+                        <h3>مراحل ثبت نام</h3>
+                    </div>
+                    <ul class="accordion">
+                        <li class="accordion-item">
+                            <a class="accordion-title active" href="javascript:void(0)">
+                                <i class='bx bx-plus'></i>
+                                گزینه خود را پیدا کنید
+                            </a>
+                            <p class="accordion-content show">
+                                لورم ایپسوم ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم استاندارد صنعت بوده است. به
+                                سادگی ساختار چاپ و متن را در بر می گیرد.
+                            </p>
+                        </li>
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class='bx bx-plus'></i>
+                                ارسال درخواست به صورت آنلاین
+                            </a>
+                            <p class="accordion-content">
+                                لورم ایپسوم ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم استاندارد صنعت بوده است. به
+                                سادگی ساختار چاپ و متن را در بر می گیرد.
+                            </p>
+                        </li>
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class='bx bx-plus'></i>
+                                دریافت صورتحساب
+                            </a>
+                            <p class="accordion-content">
+                                لورم ایپسوم ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم استاندارد صنعت بوده است. به
+                                سادگی ساختار چاپ و متن را در بر می گیرد.
+                            </p>
+                        </li>
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class='bx bx-plus'></i>
+                                ثبت نام در کلاس
+                            </a>
+                            <p class="accordion-content">
+                                لورم ایپسوم ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم استاندارد صنعت بوده است. به
+                                سادگی ساختار چاپ و متن را در بر می گیرد.
+                            </p>
+                        </li>
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class='bx bx-plus'></i>
+                                به کلاس آنلاین بروید
+                            </a>
+                            <p class="accordion-content">
+                                لورم ایپسوم ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم استاندارد صنعت بوده است. به
+                                سادگی ساختار چاپ و متن را در بر می گیرد.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="enrollment-image"></div>
+            </div>
+        </div>
+    </div>
+</section>

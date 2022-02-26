@@ -1,0 +1,113 @@
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="padding-right: 0px;padding-left: 0px;">
+    <div class="card">
+        <h5 class="card-header">ایجاد دبیر جدید</h5>
+
+        <div class="card-body">
+            <%- include('../../layouts/validationError' , {Errors : ClientError}) %>
+                <form id="validationform" data-parsley-validate="" novalidate="" method="POST"
+                    action="/admin/teachers/create" enctype="multipart/form-data">
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="title" class="control-label font-weight-bold">نام دبیر</label>
+                            <input type="text" class="form-control" name="firstName" id="title"
+                                placeholder="نام را وارد کنید">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="title" class="control-label font-weight-bold">نام خانوادگی دبیر</label>
+                            <input type="text" class="form-control" name="lastName" id="title"
+                                placeholder="نام را وارد کنید">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="body" class="control-label font-weight-bold">معرفی دبیر</label>
+                            <textarea rows="5" class="form-control" name="discreption" id="body"
+                                placeholder="متن را وارد کنید"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="images" class="control-label font-weight-bold">تصویر
+                                دبیر</label>
+                            <input type="file" class="form-control" name="profile" id="images">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="images" class="control-label font-weight-bold">دبیره درس :
+                            </label>
+                            <input type="text" class="form-control" name="teacherFor" id="images">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="category" class="control-label font-weight-bold font-weight-bold">برای وب سایت
+                                زبان
+                            </label>
+                            <select name="language" id="category" class="form-control">
+                                <% languages.forEach((language)=>{%>
+                                    <option value="<%= language._id %>">
+                                        <%= language.title %>
+                                    </option>
+                                    <%})%>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="tags" class="control-label font-weight-bold">سال تجربه</label>
+                            <input type="number" class="form-control" name="experience" id="tags" placeholder="تجربه">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="body" class="control-label font-weight-bold">توضیحات ویژگی های دبیر</label>
+                            <textarea rows="5" class="form-control" name="skillDiscriptions" id="body"
+                                placeholder="متن را وارد کنید"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="tags" class="control-label font-weight-bold">مهارت تدریس</label>
+                            <input type="text" class="form-control" name="teachingSkills" id="tags" placeholder=""
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="tags" class="control-label font-weight-bold">مهارت گفتاری</label>
+                            <input type="text" class="form-control" name="spokenSkills" id="tags" placeholder=""
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="tags" class="control-label font-weight-bold">مهارت ارتباطی</label>
+                            <input type="text" class="form-control" name="communicationSkills" id="tags" placeholder=""
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="tags" class="control-label font-weight-bold">مهارت اجتماعی</label>
+                            <input type="text" class="form-control" name="socialSkills" id="tags" placeholder=""
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group row text-right">
+                        <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                            <button type="submit" class="btn btn-space btn-primary">ارسال</button>
+                        </div>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>
+<!-- <script src="//cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('body');
+</script> -->
